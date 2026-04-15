@@ -25,7 +25,7 @@ export function Navbar() {
 
         {/* Middle section: Links */}
         <div className="flex items-center gap-6">
-          <Link href="/dashboard">
+          <Link href="/user">
             <Button
               variant="ghost"
               className="hover:bg-slate-800 hover:text-white cursor-pointer"
@@ -33,7 +33,7 @@ export function Navbar() {
               Home
             </Button>
           </Link>
-          <Link href="/dashboard/subscription">
+          <Link href="/user/subscription">
             <Button
               variant="ghost"
               className="hover:bg-slate-800 hover:text-white cursor-pointer"
@@ -45,7 +45,7 @@ export function Navbar() {
 
         {/* Right section: Profile and icons */}
         <div className="flex items-center gap-4">
-          <Link href="/dashboard/profile">
+          <Link href="/user/profile">
             <div className="flex items-center gap-3 bg-slate-900/50 p-1 pr-3 rounded-full border border-slate-800">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="/user.png" alt="Salah Ahmed" />

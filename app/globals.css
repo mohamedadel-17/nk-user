@@ -135,6 +135,10 @@
   }
 }
 
+nextjs-portal {
+  display: none !important;
+}
+
 .input {
   height: 48px;
   background: rgba(255, 255, 255, 0.08);
