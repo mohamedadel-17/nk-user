@@ -8,7 +8,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="h-screen flex flex-col bg-[#0A0E1A]">
-      <Navbar role="admin"/>
+      <Navbar role="user"/>
 
       <main className="flex-1 overflow-y-auto py-6 px-4 custom-scrollbar">
         <div className="container mx-auto">{children}</div>

@@ -5,8 +5,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Settings, LogOut, Bell } from "lucide-react";
+  
+interface NavbarProps {
+  role?: "admin" | "user";
+}
 
-export function Navbar() {
+export function Navbar({ role }: NavbarProps) {
   return (
     <header className="border-b bg-[#0A0E1A] text-white">
       {" "}
@@ -25,7 +29,7 @@ export function Navbar() {
 
         {/* Middle section: Links */}
         <div className="flex items-center gap-6">
-          <Link href="/admin">
+          <Link href={`/${role}`}>
             <Button
               variant="ghost"
               className="hover:bg-slate-800 hover:text-white cursor-pointer"
@@ -33,6 +37,7 @@ export function Navbar() {
               Home
             </Button>
           </Link>
+          {role === "admin" && (
           <Link href="/admin/subscription">
             <Button
               variant="ghost"
@@ -41,11 +46,12 @@ export function Navbar() {
               Subscription
             </Button>
           </Link>
+          )}
         </div>
 
         {/* Right section: Profile and icons */}
         <div className="flex items-center gap-4">
-          <Link href="/admin/profile">
+          <Link href={`/${role}/profile`}>
             <div className="flex items-center gap-3 bg-slate-900/50 p-1 pr-3 rounded-full border border-slate-800">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="/user.png" alt="Salah Ahmed" />
