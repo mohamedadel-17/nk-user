@@ -6,8 +6,7 @@ import {
   Pie, 
   Cell, 
   ResponsiveContainer, 
-  Tooltip, 
-  Sector 
+  Tooltip,  
 } from "recharts"
 import { Database } from "lucide-react"
 
