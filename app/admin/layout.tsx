@@ -1,5 +1,5 @@
 // app/dashboard/layout.tsx
-import { Sidebar } from "@/src/components/dashboard/sideBar";
+import { Navbar } from "@/src/components/dashboard/navBar";
 
 export default function DashboardLayout({
   children,
@@ -7,16 +7,16 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-[#0A0E1A]">
-      <Sidebar />
+    <div className="h-screen flex flex-col bg-[#0A0E1A]">
+      <Navbar />
 
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 md:p-10 custom-scrollbar">
-          <div className="max-w-[1600px] mx-auto animate-in fade-in duration-500">
-            {children}
-          </div>
-        </div>
+      <main className="flex-1 overflow-y-auto py-6 px-4 custom-scrollbar">
+        <div className="container mx-auto">{children}</div>
       </main>
+
+      <footer className="border-t border-slate-800 py-4 text-center text-sm text-slate-500 bg-[#0A0E1A]">
+        © 2026 N Leaks - All Rights Reserved
+      </footer>
     </div>
   );
 }

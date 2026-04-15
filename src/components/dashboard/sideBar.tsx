@@ -23,7 +23,7 @@ export function Sidebar() {
   const [isAnalyticsOpen, setIsAnalyticsOpen] = React.useState(true);
 
   // Navigation Items Configuration
-  const navItems = [{ name: "Leak Intelligence", icon: Users, href: "/admin" }];
+  const navItems = [{ name: "Leak Intelligence", icon: Users, href: "/super-admin" }];
 
   return (
     <aside className="w-72 h-screen flex flex-col bg-[#0A0E1A] border-r border-cyan-900/30 p-4">
@@ -94,12 +94,12 @@ export function Sidebar() {
           {isAnalyticsOpen && (
             <div className="ml-6 mt-2 space-y-2 border-l border-slate-800 pl-4 relative">
               {/* Sub-item: Data Insights */}
-              <Link href="/admin/analytics" className="block relative group">
+              <Link href="/super-admin/analytics" className="block relative group">
                 {/* Glowing Indicator Line */}
                 <div
                   className={cn(
                     "absolute -left-[17.5px] top-1/2 -translate-y-1/2 w-[3px] h-8 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-opacity duration-300",
-                    pathname === "/admin/analytics"
+                    pathname === "/super-admin/analytics"
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-40",
                   )}
@@ -108,7 +108,7 @@ export function Sidebar() {
                   variant="ghost"
                   className={cn(
                     "w-full justify-start h-11 rounded-xl px-4 transition-all font-semibold",
-                    pathname === "/admin/analytics"
+                    pathname === "/super-admin/analytics"
                       ? "bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
                       : "text-slate-400 hover:text-white hover:bg-slate-800/40",
                   )}
@@ -119,14 +119,14 @@ export function Sidebar() {
 
               {/* Sub-item: System Performance */}
               <Link
-                href="/admin/analytics/performance"
+                href="/super-admin/analytics/performance"
                 className="block relative group"
               >
                 {/* Glowing Indicator Line */}
                 <div
                   className={cn(
                     "absolute -left-[17.5px] top-1/2 -translate-y-1/2 w-[3px] h-8 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-opacity duration-300",
-                    pathname === "/admin/analytics/performance"
+                    pathname === "/super-admin/analytics/performance"
                       ? "opacity-100"
                       : "opacity-0 group-hover:opacity-40",
                   )}
@@ -135,7 +135,7 @@ export function Sidebar() {
                   variant="ghost"
                   className={cn(
                     "w-full justify-start h-11 rounded-xl px-4 transition-all font-semibold",
-                    pathname === "/admin/analytics/performance"
+                    pathname === "/super-admin/analytics/performance"
                       ? "bg-cyan-400 text-slate-950 hover:bg-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
                       : "text-slate-400 hover:text-white hover:bg-slate-800/40",
                   )}
@@ -148,12 +148,12 @@ export function Sidebar() {
         </div>
 
         {/* Company Management */}
-        <Link href="/admin/company">
+        <Link href="/super-admin/company">
           <Button
             variant="ghost"
             className={cn(
               "w-full justify-start gap-4 h-12 rounded-xl text-slate-400 font-medium transition-all duration-300",
-              pathname === "/admin/company"
+              pathname === "/super-admin/company"
                 ? "bg-cyan-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
                 : "hover:bg-slate-800/50 hover:text-white",
             )}
@@ -168,7 +168,7 @@ export function Sidebar() {
         <Separator className="bg-cyan-900/20" />
 
         {/* User Badge */}
-        <Link href="/admin/profile">
+        <Link href="/super-admin/profile">
           <div className="flex items-center gap-3 py-2">
             <div className="relative">
               <Avatar className="size-11 border-2 border-slate-800">
